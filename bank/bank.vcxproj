@@ -124,10 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bank.cpp" />
-    <ClCompile Include="Person.cpp" />
-    <ClCompile Include="Validation.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="person.cpp" />
+    <ClCompile Include="validation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Client.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Validation.h" />
   </ItemGroup>
