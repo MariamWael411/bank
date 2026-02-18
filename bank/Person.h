@@ -12,9 +12,7 @@ protected:
 
 public:
     Person() {
-        id = 0;
-        name = "";
-        password = "";
+       
     }
 
     Person(int id, string name, string password) {
@@ -51,7 +49,7 @@ public:
         return password;
     }
 
-    void display()  {
+    virtual void display()  {
         cout << "ID: " << id << endl;
         cout << "Name: " << name << endl;
         cout << "Password: " << password << endl;

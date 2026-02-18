@@ -13,7 +13,7 @@ public:
 	}
 
 	static bool isValidName(const string& name) {
-		if (name.size() < 5 || name.size() > 20) return false;
+		if (name.size() < 3 || name.size() > 20) return false;
 		return isAlphabetic(name);
 	}
 
