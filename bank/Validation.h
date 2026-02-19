@@ -1,23 +1,58 @@
 #pragma once
+#include<iostream>
 #include <string>
 using namespace std;
 class Validation {
 public:
+
+	/// <summary>
+	/// check the name is alphabetic
+	/// </summary>
+	/// <param name="name">
+	/// Name
+	/// </param>
+	/// bool
+	/// <returns></returns>
 	static bool isAlphabetic(const string& name) {
 		for (char c : name) {
-			if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' '))
+			if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ')||c==' ') {
+				cout << "Name must be Alphabetic.!! " << endl;
 				return false;
+			}
+				
 		}
 
 		return true;
 	}
-
+	/// <summary>
+	/// Check the name size between 3 to 20 and
+	/// check the name is alphabetic
+	/// </summary>
+	/// <param name="name">
+	/// Name
+	/// </param>
+	///
+	/// <returns>
+	///  bool
+	/// </returns>
 	static bool isValidName(const string& name) {
-		if (name.size() < 3 || name.size() > 20) return false;
+		if (name.size() < 3 || name.size() > 20) {
+			cout << "at least size 3 and max 20.!!" << endl;
+			return false;
+
+		}
 		return isAlphabetic(name);
 	}
-
-	static string ValidatePassword(string password) {
+	/// <summary>
+	/// Check password at least 8 characters max 20 , 
+	///  include special characters, number, capital litter,small
+	/// letter and do not have spaces
+	/// </summary>
+	/// <param name="password"></param>
+	/// <returns>
+	/// bool
+	/// </returns>
+	static bool ValidatePassword(string password) {
 
 		bool IsUpper, Islower, IsNum, IsSymbol, IsSpace;
 		IsUpper = Islower = IsNum = IsSymbol = IsSpace = false;
@@ -50,19 +85,41 @@ public:
 		}
 		if (IsUpper && Islower && IsNum && IsSymbol && !IsSpace && password.length() >= 8 && password.length() <= 20)
 		{
-			return password;
+			return true;
 		}
-		else
-		{
-			return "at least 8 characters and you should include special characters , number and do not have spaces";
-		}
+		
+			cout<<"at least 8 characters , you should include special characters, number, capital litter,small letter and do not have spaces"<<endl;
+			return false;
+		
 	}
-
+/// <summary>
+/// Check the min balance 1500
+/// </summary>
+/// <param name="balance"></param>
+/// <returns>
+/// bool
+/// </returns>
 static	bool isValidBalance(double balance) {
-		return balance >= 1500;
+	if (balance<1500)
+	{
+		cout << "The Minimum  balance is 1500.!!" << endl;
+		return false;
 	}
-
+	return true;
+	}
+	/// <summary>
+	/// tne min salary 5000
+	/// </summary>
+	/// <param name="salary"></param>
+	/// <returns>
+	/// bool
+	/// </returns>
 	static bool isValidSalary(double salary) {
-		return salary >= 5000;
+		if (salary < 5000)
+		{
+			cout << "The Minimum  salary is 5000.!!" << endl;
+			return false;
+		}
+		return true;
 	}
 };

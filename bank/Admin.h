@@ -1,5 +1,4 @@
 #pragma once
-#include<string>
 #include"Employee.h"
 class Admin : public Employee
 {

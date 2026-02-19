@@ -1,7 +1,6 @@
 #pragma once
-#include<string>
 #include "Person.h"
-#include"Validation.h"
+
 using namespace std;
 
 class Client : public Person
@@ -11,28 +10,35 @@ class Client : public Person
 public:
 	Client() : Person()
 	{
-
+		balance = 0;
 	}
 	Client(string name, int id, string password, double balance) : Person(id, name, password)
 	{
-		this->balance = balance;
+		setBalance(balance);
 	}
 	void setBalance(double balance) {
 		if (Validation::isValidBalance(balance))
 		{
 			this->balance = balance;
 		}
-		else {
-			cout << "The Minimum  balance is 1500" << endl;
-		}
+		
 	}
 	double getBalance() {
 		return balance;
 	}
 	void deposit(double amount) {
-		balance += amount;
-		string Deposit = to_string(amount) + " has been added to your account .Your  Current balance is : " + to_string(balance);
-		addTransection(Deposit);
+		if (amount>0)
+		{
+			balance += amount;
+			cout << "Deposit Done Successfully" << endl;
+			string Deposit = to_string(amount) + " has been added to your account .Your  Current balance is : " + to_string(balance);
+			addTransection(Deposit);
+		}
+		else
+		{
+			cout << "invalid amount" << endl;
+		}
+		
 
 	}
 	void withdraw(double amount) {
@@ -43,6 +49,8 @@ public:
 		else
 		{
 			balance -= amount;
+			cout << "Withdraw Done Successfully" << endl;
+
 			string Withdraw = to_string(amount) + " has been withdrawn to your account .Your  Current balance is : " + to_string(balance);
 			addTransection(Withdraw);
 
@@ -56,8 +64,12 @@ public:
 		}
 		else
 		{
-			c.deposit(amount);
-			withdraw(amount);
+			balance -= amount;
+			c.balance += amount;
+			string Transfer= to_string(amount)+" has been transferred to "+c.getName()+"successfully Your  Current balance is : " + 
+				to_string(balance);
+			addTransection(Transfer);
+
 			cout << "Transfer done Successfully" << endl;
 
 		}
@@ -86,7 +98,7 @@ public:
 		}
 	}
 	void display() {
-
+		Person::display();
 		cout << "Balance is : " << balance << endl;
 
 	}

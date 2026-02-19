@@ -1,6 +1,5 @@
 #pragma once
-#include <iostream>
-#include <string>
+
 #include "Validation.h"
 using namespace std;
 
@@ -12,13 +11,13 @@ protected:
 
 public:
     Person() {
-       
+        id = 0;
     }
 
     Person(int id, string name, string password) {
         this->id = id;
-        this->name = name;
-        this->password = password;
+        setName(name);
+        setPassword(password);
     }
 
     void setId(int id) {
@@ -28,9 +27,7 @@ public:
     void setName(string name) {
         if (Validation::isValidName(name))
             this->name = name;
-        else
-            cout << "Name must be Alphabetic and at least size 3 and max 20" << endl;
-    }
+           }
 
     void setPassword(string password) {
         this->password = Validation::ValidatePassword(password);

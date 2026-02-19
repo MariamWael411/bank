@@ -2,16 +2,14 @@
 
 #include<string>
 #include "Person.h"
-#include"Validation.h"
-using namespace std;
-
 class Employee :public Person
 {
+protected:
 	double salary;
 public:
 	Employee(): Person()
 	{
-
+		salary = 0;
 	}
 	Employee( int id, string name,string password, double salary) : Person(id, name, password)
 	{
