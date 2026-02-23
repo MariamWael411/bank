@@ -1,21 +1,29 @@
 #pragma once
 #include"Employee.h"
+
 class Admin : public Employee
 {
 
-	Admin()
+	Admin():Employee()
 	{
 
 	}
 	static Admin* admin;
 public:
 	static Admin* getAdmin() {
-		if (admin==nullptr)
+		if (admin == nullptr)
 		{
+			
 			admin = new Admin;
 		}
 		return admin;
 	}
+	
+	
+			
+		
+	
+	
 
 
 

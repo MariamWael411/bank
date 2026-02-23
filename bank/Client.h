@@ -5,17 +5,14 @@ using namespace std;
 
 class Client : public Person
 {
+	static int countId;
 	double balance;
 	string TransectionHistory[5];
 public:
-	Client() : Person()
-	{
-		balance = 0;
-	}
-	Client(string name, int id, string password, double balance) : Person(id, name, password)
-	{
-		setBalance(balance);
-	}
+	Client();
+	
+	Client(string name, string password, double balance);
+	
 	void setBalance(double balance) {
 		if (Validation::isValidBalance(balance))
 		{

@@ -14,8 +14,8 @@ public:
         id = 0;
     }
 
-    Person(int id, string name, string password) {
-        this->id = id;
+    Person( string name, string password) {
+        
         setName(name);
         setPassword(password);
     }
@@ -30,7 +30,9 @@ public:
            }
 
     void setPassword(string password) {
-        this->password = Validation::ValidatePassword(password);
+        if (Validation::ValidatePassword(password)) {
+            this->password = password;
+       }
             
     }
 
