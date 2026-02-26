@@ -85,7 +85,7 @@ public:
 	static void getClients() {
 		fstream file;
 		string line;
-		vector<Client> clients;
+		vector<Client*> clients;
 		file.open("Files/Clients.txt", ios::in);
 		while (getline(file, line)) {
 			clients.push_back(Parser::ParserToClient(line));
@@ -93,10 +93,10 @@ public:
 		for (int i = 0; i < clients.size(); i++)
 		{
 			cout << "\n==================== Client " << i + 1 << " ========================\n";
-			cout << "Client Id : " << clients[i].getId() << endl;
-			cout << "Client Name : " << clients[i].getName() << endl;
-			cout << "Client Password : " << clients[i].getPassword() << endl;
-			cout << "Client Balance : " << clients[i].getBalance() << endl;
+			cout << "Client Id : " << clients[i]->getId() << endl;
+			cout << "Client Name : " << clients[i]->getName() << endl;
+			cout << "Client Password : " << clients[i]->getPassword() << endl;
+			cout << "Client Balance : " << clients[i]->getBalance() << endl;
 		}
 	}
 	/// <summary>
@@ -105,7 +105,7 @@ public:
 	static void getEmployees() {
 		fstream file;
 		string line;
-		vector<Employee> Employees;
+		vector<Employee*> Employees;
 		file.open("Files/Employees.txt", ios::in);
 		while (getline(file, line)) {
 			Employees.push_back(Parser::ParserToEmployee(line));
@@ -113,10 +113,10 @@ public:
 		for (int i = 0; i < Employees.size(); i++)
 		{
 			cout << "\n==================== Employee " << i + 1 << " ========================\n";
-			cout << "Employee Id : " << Employees[i].getId() << endl;
-			cout << "Employee Name : " << Employees[i].getName() << endl;
-			cout << "Employee Password : " << Employees[i].getPassword() << endl;
-			cout << "Employee Salary : " << Employees[i].getSalary() << endl;
+			cout << "Employee Id : " << Employees[i]->getId() << endl;
+			cout << "Employee Name : " << Employees[i]->getName() << endl;
+			cout << "Employee Password : " << Employees[i]->getPassword() << endl;
+			cout << "Employee Salary : " << Employees[i]->getSalary() << endl;
 		}
 	}
 	/// <summary>

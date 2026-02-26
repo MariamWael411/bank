@@ -29,13 +29,13 @@ public:
 	/// <returns>
 	/// client
 	/// </returns>
-	static Client ParserToClient(string line) {
-		Client c;
+	static Client* ParserToClient(string line) {
+		Client* c=new Client;
 		vector<string> v = Parser::split(line);
-		c.setId(stoi(v[0]));
-		c.setName(v[1]);
-		c.setPassword(v[2]);
-		c.setBalance(stod(v[3]));
+		c->setId(stoi(v[0]));
+		c->setName(v[1]);
+		c->setPassword(v[2]);
+		c->setBalance(stod(v[3]));
 		return c;
 
 	}
@@ -46,13 +46,13 @@ public:
 	/// <returns>
 	/// employee
 	/// </returns>
-	static Employee ParserToEmployee(string line) {
-		Employee e;
+	static Employee* ParserToEmployee(string line) {
+		Employee* e=new Employee;
 		vector<string> v = Parser::split(line);
-		e.setId(stoi(v[0]));
-		e.setName(v[1]);
-		e.setPassword(v[2]);
-		e.setSalary(stod(v[3]));
+		e->setId(stoi(v[0]));
+		e->setName(v[1]);
+		e->setPassword(v[2]);
+		e->setSalary(stod(v[3]));
 		return e;
 
 	}
