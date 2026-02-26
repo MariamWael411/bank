@@ -86,7 +86,7 @@ public:
 		fstream file;
 		string line;
 		vector<Client> clients;
-		file.open("Clients.txt", ios::in);
+		file.open("Files/Clients.txt", ios::in);
 		while (getline(file, line)) {
 			clients.push_back(Parser::ParserToClient(line));
 		}
@@ -106,7 +106,7 @@ public:
 		fstream file;
 		string line;
 		vector<Employee> Employees;
-		file.open("Employees.txt", ios::in);
+		file.open("Files/Employees.txt", ios::in);
 		while (getline(file, line)) {
 			Employees.push_back(Parser::ParserToEmployee(line));
 		}
@@ -127,7 +127,7 @@ public:
 		string line;
 		
 		vector<Admin*> admin;
-		file.open("Admin.txt", ios::in);
+		file.open("Files/Admin.txt", ios::in);
 		getline(file, line);
 		admin.push_back(Parser::ParserToAdmin(line));
 

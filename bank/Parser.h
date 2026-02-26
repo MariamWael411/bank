@@ -5,12 +5,11 @@
 #include"Admin.h"
 class Parser
 {
-public:
 	/// <summary>
-	/// Splits a string into tokens and return them in a vector
-	/// </summary>
-	/// <param name="line"></param>
-	/// <returns></returns>
+/// Splits a string into tokens and return them in a vector
+/// </summary>
+/// <param name="line"></param>
+/// <returns></returns>
 	static vector<string> split(string line) {
 		string s;
 		stringstream ss{ line };
@@ -21,6 +20,8 @@ public:
 		}
 		return v;
 	}
+public:
+
 	/// <summary>
 	/// Parser a line of text and converts it into a client object
 	/// </summary>

@@ -5,14 +5,14 @@ Client::Client() :Person() {
 
 	countId++;
 	id = countId;
-	FileHelper::SaveLast("ClientLastId.txt", countId);
+	FileHelper::SaveLast("Files/ClientLastId.txt", countId);
 
 }
 Client::Client(string name, string password, double balance) : Person(name, password) {
 	countId++;
 	id = countId;
 	this->balance = balance;
-	FileHelper::saveClient("Clients.txt", "ClientLastId.txt", *this);
+	FileHelper::saveClient("Files/Clients.txt", "Files/ClientLastId.txt", *this);
 
 
 }

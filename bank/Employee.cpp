@@ -4,7 +4,7 @@ int Employee::countId2 = 0;
 Employee::Employee() : Person() {
 	countId2++;
 	id = countId2;
-	FileHelper::SaveLast("EmployeeLastId.txt", countId2);
+	FileHelper::SaveLast("Files/EmployeeLastId.txt", countId2);
 
 }
 Employee::Employee(string name, string password, double salary) : Person(name, password)
@@ -13,6 +13,6 @@ Employee::Employee(string name, string password, double salary) : Person(name, p
 	id = countId2;
 	this->salary = salary;
 
-	FileHelper::saveEmployee("Employees.txt", "EmployeeLastId.txt", *this);
+	FileHelper::saveEmployee("Files/Employees.txt", "Files/EmployeeLastId.txt", *this);
 
 }
