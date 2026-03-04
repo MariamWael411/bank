@@ -10,7 +10,7 @@ public:
 
     }
    static void addEmployee(Employee e) {
-        FileHelper::saveEmployee("Files/Employees.txt", "FilesEmployeeLastId.txt", e);
+        FileHelper::saveEmployee("Files/Employees.txt", "Files/EmployeeLastId.txt", e);
     }
    static void addAdmin(Admin *a) {
         FileHelper::saveAdmin("Files/Admin.txt", "Files/AdminLastId.txt", a);
@@ -30,7 +30,7 @@ public:
         FileHelper::ClearFiles("Files/Clients.txt", "Files/ClientLastId.txt");
     }
    static void removeAllEmployees() {
-        FileHelper::ClearFiles("Files/Employees.txt", "FilesEmployeeLastId.txt");
+        FileHelper::ClearFiles("Files/Employees.txt", "Files/EmployeeLastId.txt");
     }
    static void removeAllAdmins() {
         FileHelper::ClearFiles("Files/Admin.txt", "Files/AdminLastId.txt");
