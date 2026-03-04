@@ -4,15 +4,35 @@
 
 class FileManager : public DataSourceInterface {
 public:
-    void addClient(Client obj) override;
-    void addEmployee(Employee obj) override;
-    void addAdmin(Admin obj) override;
+   static void addClient(Client c) {
 
-    void getAllClients() override;
-    void getAllEmployees() override;
-    void getAllAdmins() override;
+        FileHelper::saveClient("Files/Clients.txt", "Files/ClientLastId.txt", c);
 
-    void removeAllClients() override;
-    void removeAllEmployees() override;
-    void removeAllAdmins() override;
+    }
+   static void addEmployee(Employee e) {
+        FileHelper::saveEmployee("Files/Employees.txt", "FilesEmployeeLastId.txt", e);
+    }
+   static void addAdmin(Admin *a) {
+        FileHelper::saveAdmin("Files/Admin.txt", "Files/AdminLastId.txt", a);
+    }
+
+   static void getAllClients() {
+        FileHelper::getClients();
+    }
+   static void getAllEmployees() {
+        FileHelper::getEmployees();
+    }
+   static  void getAllAdmins() {
+        FileHelper::getAdmin();
+    }
+
+   static void removeAllClients() {
+        FileHelper::ClearFiles("Files/Clients.txt", "Files/ClientLastId.txt");
+    }
+   static void removeAllEmployees() {
+        FileHelper::ClearFiles("Files/Employees.txt", "FilesEmployeeLastId.txt");
+    }
+   static void removeAllAdmins() {
+        FileHelper::ClearFiles("Files/Admin.txt", "Files/AdminLastId.txt");
+    }
 };
