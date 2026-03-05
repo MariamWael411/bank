@@ -1,5 +1,5 @@
 #pragma once
-
+#include<vector>
 #include "Validation.h"
 using namespace std;
 

@@ -102,4 +102,5 @@ public:
 
 
 };
+static vector<Client*> clients;
 
