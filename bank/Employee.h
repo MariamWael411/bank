@@ -9,11 +9,15 @@ protected:
 	static int countId2;
 	double salary;
 public:
-	Employee();
+	Employee() {
+		salary = 0;
+	}
 	
 	
 	
-	Employee(string name, string password, double salary);
+	Employee(string name, string password, double salary) :Person(name, password) {
+		setSalary(salary);
+	}
 	
 	void setSalary(double salary) {
 		if (Validation::isValidSalary(salary))

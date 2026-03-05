@@ -10,7 +10,7 @@
 #define AdminFile "Files/Admin.txt"
 #define client_l_Id "Files/ClientLastId.txt"
 #define employee_l_Id "Files/EmployeeLastId.txt"
-#define admin_l_Id "Files/AdminLastId.txt""Files/AdminLastId.txt"
+#define admin_l_Id "Files/AdminLastId.txt"
 class FileHelper
 {
 public:
