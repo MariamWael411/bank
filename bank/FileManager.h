@@ -4,35 +4,49 @@
 
 class FileManager : public DataSourceInterface {
 public:
-    void addClient(Client obj) {
+   static void addClient(Client obj) {
 
         FileHelper::saveClient(obj);
 
     }
-    void addEmployee(Employee obj) {
+   static void addEmployee(Employee obj) {
         FileHelper::saveEmployee(obj);
     }
-    void addAdmin(Admin * obj) {
+   static void addAdmin(Admin * obj) {
         FileHelper::saveAdmin(obj);
     }
 
-    void getAllClients() {
+   static void getAllClients() {
         FileHelper::getClients();
     }
-    void getAllEmployees() {
+   static void getAllEmployees() {
         FileHelper::getEmployees();
     }
-     void getAllAdmins() {
+   static void getAllAdmins() {
         FileHelper::getAdmin();
     }
 
-    void removeAllClients() {
+   static void removeAllClients() {
         FileHelper::ClearFiles(ClientsFile, client_l_Id);
     }
-    void removeAllEmployees() {
+   static void removeAllEmployees() {
         FileHelper::ClearFiles(EmployeesFile, employee_l_Id);
     }
-    void removeAllAdmins() {
+   static void removeAllAdmins() {
         FileHelper::ClearFiles(AdminFile,admin_l_Id);
     }
+   static int ReturnIndexOfClient(Client* c) {
+
+       int index{};
+       for (int i = 0; i < clients.size(); i++)
+       {
+           if (clients[i]->getId() == c->getId())
+           {
+               index = i;
+               break;
+           }
+       }
+       return index;
+
+   }
 };
