@@ -49,9 +49,10 @@ public:
     }
 
     virtual void display()  {
-        cout << "ID: " << id << endl;
-        cout << "Name: " << name << endl;
-        cout << "Password: " << password << endl;
+        cout << endl;
+        cout << "  ID: " << id << endl;
+        cout << "  Name: " << name << endl;
+        cout << "  Password: " << password << endl;
     }
 };
 

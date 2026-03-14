@@ -31,13 +31,17 @@ public:
 		if (amount>0)
 		{
 			balance += amount;
-			cout << "Deposit Done Successfully" << endl;
+			cout << endl;
+
+			cout << "  Deposit Done Successfully" << endl;
 			string Deposit = to_string(amount) + " has been added to your account .Your  Current balance is : " + to_string(balance);
 			addTransection(Deposit);
 		}
 		else
 		{
-			cout << "invalid amount" << endl;
+			cout << endl;
+
+			cout << "  invalid amount" << endl;
 		}
 		
 
@@ -45,12 +49,16 @@ public:
 	void withdraw(double amount) {
 		if (amount > balance)
 		{
-			cout << "exceeded balance , your balance : " << to_string(balance) << endl;
+			cout << endl;
+
+			cout << "  exceeded balance , your balance : " << to_string(balance) << endl;
 		}
 		else
 		{
 			balance -= amount;
-			cout << "Withdraw Done Successfully" << endl;
+			cout << endl;
+
+			cout << "  Withdraw Done Successfully" << endl;
 
 			string Withdraw = to_string(amount) + " has been withdrawn to your account .Your  Current balance is : " + to_string(balance);
 			addTransection(Withdraw);
@@ -61,7 +69,9 @@ public:
 	void TransferTo(double amount, Client& c) {
 		if (amount > balance)
 		{
-			cout << "exceeded balance , your balance is " << to_string(balance) << endl;
+			cout << endl;
+
+			cout << "  exceeded balance , your balance is " << to_string(balance) << endl;
 		}
 		else
 		{
@@ -70,13 +80,15 @@ public:
 			string Transfer= to_string(amount)+" has been transferred to "+c.getName()+"successfully Your  Current balance is : " + 
 				to_string(balance);
 			addTransection(Transfer);
+			cout << endl;
 
-			cout << "Transfer done Successfully" << endl;
+			cout << "  Transfer done Successfully" << endl;
 
 		}
 	}
 	void CheckBalance() {
-		cout << "your current balance is : " << balance << endl;
+		cout << endl;
+		cout << "  your current balance is : " << balance << endl;
 	}
 	void addTransection(string transection) {
 
@@ -89,6 +101,8 @@ public:
 
 	}
 	void printTransection() {
+		cout << endl;
+
 		for (int i = 0; i < 5; i++)
 		{
 			if (!TransectionHistory[i].empty())
@@ -100,7 +114,7 @@ public:
 	}
 	void display() {
 		Person::display();
-		cout << "Balance is : " << balance << endl;
+		cout << "  Balance is : " << balance << endl;
 
 	}
 

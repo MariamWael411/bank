@@ -16,7 +16,9 @@ public:
 	static bool isAlphabetic(const string& name) {
 		for (char c : name) {
 			if (!((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || c == ' ')||c==' ') {
-				cout << "Name must be Alphabetic.!! " << endl;
+				cout << endl;
+
+				cout << "  Name must be Alphabetic.!! " << endl;
 				return false;
 			}
 				
@@ -37,7 +39,9 @@ public:
 	/// </returns>
 	static bool isValidName(const string& name) {
 		if (name.size() < 3 || name.size() > 20) {
-			cout << "at least size 3 and max 20.!!" << endl;
+			cout << endl;
+
+			cout << "  at least size 3 and max 20.!!" << endl;
 			return false;
 
 		}
@@ -87,8 +91,9 @@ public:
 		{
 			return true;
 		}
-		
-			cout<<"at least 8 characters , you should include special characters, number, capital litter,small letter and do not have spaces"<<endl;
+		cout << endl;
+
+			cout<<"  at least 8 characters , you should include special characters, number, capital litter,small letter and do not have spaces"<<endl;
 			return false;
 		
 	}
@@ -102,7 +107,9 @@ public:
 static	bool isValidBalance(double balance) {
 	if (balance<1500)
 	{
-		cout << "The Minimum  balance is 1500.!!" << endl;
+		cout << endl;
+
+		cout << "  The Minimum  balance is 1500.!!" << endl;
 		return false;
 	}
 	return true;
@@ -117,9 +124,69 @@ static	bool isValidBalance(double balance) {
 	static bool isValidSalary(double salary) {
 		if (salary < 5000)
 		{
-			cout << "The Minimum  salary is 5000.!!" << endl;
+			cout << endl;
+			cout << "  The Minimum  salary is 5000.!!" << endl;
 			return false;
 		}
 		return true;
 	}
+
+	static string EnterName(string message) {
+		string name;
+		do {
+
+			cout << message;
+			cin >> name;
+			system("cls");
+
+		} while (!Validation::isValidName(name));
+
+		return name;
+	}
+
+	static string EnterPassword(string message) {
+		string password;
+		do {
+
+
+			cout << message;
+			cin >> password;
+			system("cls");
+
+		} while (!Validation::ValidatePassword(password));
+
+		return password;
+	}
+
+	static double EnterBalance(string message) {
+		double balance;
+		do {
+
+			cout << message;
+			cin >> balance;
+			system("cls");
+
+
+
+		} while (!Validation::isValidBalance(balance));
+		return balance;
+
+	}
+
+	static double EnterSalary(string message) {
+
+		double salary;
+		do {
+
+			cout << message;
+			cin >> salary;
+			system("cls");
+
+
+
+		} while (!Validation::isValidSalary(salary));
+
+		return salary;
+	}
+
 };

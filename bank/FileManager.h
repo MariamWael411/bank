@@ -35,18 +35,32 @@ public:
    static void removeAllAdmins() {
         FileHelper::ClearFiles(AdminFile,admin_l_Id);
     }
-   static int ReturnIndexOfClient(Client* c) {
+   
+   
+   static void UpdateClient() {
 
-       int index{};
+       FileManager::removeAllClients();
        for (int i = 0; i < clients.size(); i++)
        {
-           if (clients[i]->getId() == c->getId())
-           {
-               index = i;
-               break;
-           }
-       }
-       return index;
+           FileManager::addClient(*clients[i]);
 
+       }
    }
+
+   static void UpdateEmployee() {
+
+       FileManager::removeAllEmployees();
+       for (int i = 0; i < employees.size(); i++)
+       {
+           FileManager::addEmployee(*employees[i]);
+
+       }
+   }
+
+   static void getAllData() {
+       getAllClients();
+       getAllEmployees();
+       getAllAdmins();
+   }
+
 };

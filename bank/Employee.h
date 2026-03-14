@@ -6,7 +6,7 @@
 class Employee :public Person
 {
 protected:
-	static int countId2;
+	
 	double salary;
 public:
 	Employee() {
@@ -24,16 +24,14 @@ public:
 		{
 			this->salary = salary;
 		}
-		else {
-			cout << "Minimum Salary is 5000" << endl;
-		}
+		
 	}
 	double getSalary() {
 		return salary;
 	}
 	void display() {
 		Person::display();
-		cout << "Salary is : " << salary << endl;
+		cout << "  Salary is : " << salary << endl;
 
 	}
 	
